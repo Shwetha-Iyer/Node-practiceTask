@@ -6,6 +6,7 @@ const port = process.env.PORT || 3000;
 fs.readdir(".\\PreBoot JavaScript","utf-8",(err,files)=>{
     app.get("/",(req,res)=>{
         if(err){
+            console.log(err);
             res.send("Oops!! Something is wrong!");
         }
         else{
