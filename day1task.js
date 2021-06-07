@@ -2,6 +2,7 @@ var fs = require("fs");
 var express = require("express");
 var app = express();
 var result ="";
+const port = process.env.PORT || 3000;
 fs.readdir(".\\PreBoot JavaScript","utf-8",(err,files)=>{
     app.get("/",(req,res)=>{
         if(err){
@@ -22,5 +23,5 @@ fs.readdir(".\\PreBoot JavaScript","utf-8",(err,files)=>{
             res.send(result);
         } 
     });
-    app.listen(3000);
+    app.listen(port, ()=> console.log("App running on:",port));
 });
