@@ -1,0 +1,31 @@
+// program to get single line input and display the sum of all values
+var readline = require('readline');
+var input = readline.createInterface({
+    input: process.stdin
+});
+var userInput =[];
+input.on('line', function(values){
+    userInput.push(values);
+});
+input.on('close',function(){
+    console.log(addValues(userInput));
+});
+
+function addValues(data){
+    var sum=0;
+    for(var i=0;i<data.length;i++){
+        sum+=parseInt(data[i]);
+    }
+    return sum;
+}
+
+
+Input:
+======
+4
+6
+5
+
+Output:
+======
+15

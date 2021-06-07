@@ -1,0 +1,22 @@
+// program to print the reverse of a string without a temp variable
+var readline = require('readline');
+var input = readline.createInterface({
+    input: process.stdin
+});
+var userInput=[];
+input.on('line', (values) => {
+    userInput.push(values);
+});
+input.on('close', () => {
+    var n = userInput[0].split("");
+    console.log((n.reverse()).join(""));
+});
+
+
+Input:
+======
+shwetha
+
+Output:
+=======
+ahtewhs

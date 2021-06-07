@@ -1,0 +1,35 @@
+// program to print the odd and even didgits of a number
+var readline = require('readline');
+var input = readline.createInterface({
+    input: process.stdin
+});
+var userInput=[];
+input.on('line', (values) => {
+    userInput.push(values);
+});
+input.on('close', () => {
+    var data = userInput[0].split("");
+    var odd=[];
+    var even=[];
+    for(var i=0;i<data.length;i++){
+        if(data[i]%2===0){
+            even.push(data[i]);
+        }
+        else
+        odd.push(data[i]);
+    }
+    even = even.sort();
+    console.log(even.join(" "));
+    odd = odd.sort();
+    console.log(odd.join(" "));
+});
+
+
+Input:
+======
+233342
+
+Output:
+======
+2 2 4
+3 3 3

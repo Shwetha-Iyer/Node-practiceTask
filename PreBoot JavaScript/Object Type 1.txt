@@ -1,0 +1,31 @@
+//program to count the no.of occurences of a value
+var readline = require('readline');
+var input = readline.createInterface({
+    input: process.stdin
+});
+var userInput =[];
+input.on('line', function(values){
+    userInput.push(values);
+});
+input.on('close',function(){
+    var count = {};
+    var data = userInput[0].split(" ");
+    for(var i=0;i<data.length;i++){
+        if(count[data[i]]===undefined)
+        count[data[i]]=1;
+        else
+        count[data[i]]+=1;
+    }
+    console.log(count);
+    console.log(count[2]);
+});
+
+
+Input:
+======
+1 1 2 2 2 2 2 2 4 5 5 5 7 7 7 6 6 2
+
+Output:
+=======
+{ '1': 2, '2': 7, '4': 1, '5': 3, '6': 2, '7': 3 }
+7

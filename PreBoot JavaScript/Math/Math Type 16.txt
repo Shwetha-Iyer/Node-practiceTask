@@ -1,0 +1,31 @@
+// program to find if we can form a right angled triangle
+var readline = require('readline');
+var input = readline.createInterface({
+    input : process.stdin
+});
+var userInput = [];
+input.on('line', (values) => {
+    userInput.push(values);
+});
+input.on('close', () => {
+    var data = userInput[0].split(" ");
+    var a = data[0];
+    var b = data[1];
+    var c = data[2];
+    a*=a;
+    b*=b;
+    c*=c;
+    if((a+b===c)||(b+c===a)||(c+a===b))
+    console.log("yes");
+    else
+    console.log("no");
+});
+
+
+Input:
+======
+3 4 5
+
+Output:
+======
+yes

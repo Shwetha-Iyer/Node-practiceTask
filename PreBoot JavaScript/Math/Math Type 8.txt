@@ -1,0 +1,33 @@
+// program to print each digit of a number seperated by space
+var readline = require('readline');
+var input = readline.createInterface({
+    input: process.stdin
+});
+var userInput=[];
+input.on('line', (values) => {
+    userInput.push(values);
+});
+input.on('close', () => {
+    var n = userInput[0].split("");
+    var result="";
+    for(var i=0;i<n.length;i++)
+    {
+        if(i===n.length-1){
+            result+=n[i];
+        }
+        else{
+            result+=n[i];
+            result+=" ";
+        }
+    }
+    console.log(result);
+});
+
+
+Input:
+=====
+1738
+
+Output:
+=======
+1 7 3 8

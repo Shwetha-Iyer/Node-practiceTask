@@ -1,0 +1,27 @@
+// program to remove all white spaces and print the length of new string
+var readline = require('readline');
+var input = readline.createInterface({
+    input: process.stdin
+});
+var userInput=[];
+input.on('line', (values) => {
+    userInput.push(values);
+});
+input.on('close', () => {
+    var data = userInput[0].split("");
+    for(var i=0;i<data.length;i++){
+        if(data[i]===" "){
+            data.splice(i,1);
+        }
+    }
+    console.log(data.length);
+});
+
+
+Input:
+======
+hello im shwetha
+
+Output:
+=======
+14

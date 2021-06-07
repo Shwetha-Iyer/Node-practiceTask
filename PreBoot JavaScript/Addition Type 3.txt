@@ -1,0 +1,33 @@
+//program to add 2 number without carry
+var readline = require('readline');
+var input = readline.createInterface({
+    input: process.stdin
+});
+var userInput =[];
+input.on('line', function(values){
+    userInput.push(values);
+});
+input.on('close',function(){
+    var data = userInput[0].split(" ");
+    var n1 = +data[0];
+    var n2 = +data[1];
+    var x = 1;
+    var result = 0;
+    while((n1>0) &&(n2>0))
+    {
+        result+=x*((n1+n2)%10);
+        n1 = Math.floor(n1/10);
+        n2 = Math.floor(n2/10);
+        x*=10;
+    }
+    console.log(result);
+});
+
+
+Input:
+======
+44 66
+
+Output:
+=======
+0

@@ -1,0 +1,33 @@
+//program to find composite number
+var readline = require('readline');
+var input = readline.createInterface({
+    input : process.stdin
+});
+var userInput = [];
+input.on('line', (values) => {
+    userInput.push(values);
+});
+input.on('close', () => {
+    var n = parseInt(userInput[0]);
+    var count=0;
+    for(var i=2;i<n;i++){
+        if(n%i===0){
+        count++;
+        break;
+        }
+    }
+    if(count>0)
+        console.log("yes");
+    else
+        console.log("no");
+    
+});
+
+
+Input:
+======
+123
+
+Output:
+======
+yes

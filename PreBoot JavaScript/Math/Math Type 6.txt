@@ -1,0 +1,30 @@
+// program to find the roots of a quadratic equation
+var readline = require('readline');
+var input = readline.createInterface({
+    input: process.stdin
+});
+var userInput=[];
+input.on('line', (values) => {
+    userInput.push(values);
+});
+input.on('close', () => {
+    var data = userInput[0].split(" ");
+    var a = parseInt(data[0]);
+    var b = parseInt(data[1]);
+    var c = parseInt(data[2]);
+    var root1=0;
+    var root2=0;
+    root1 = (-b)+(Math.sqrt((b*b)-(4*a*c)));
+    root2 = (-b)-(Math.sqrt((b*b)-(4*a*c)));
+    console.log((parseFloat((root1)/(2*a))).toFixed(2));
+    console.log((parseFloat((root2)/(2*a))).toFixed(2));
+});
+
+Input:
+======
+1 5 6
+
+Output:
+=======
+-2.00
+-3.00

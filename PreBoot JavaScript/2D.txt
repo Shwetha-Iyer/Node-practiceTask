@@ -1,0 +1,45 @@
+// program to display unique elements
+var readline = require('readline');
+var input = readline.createInterface({
+    input: process.stdin
+});
+var userInput =[];
+input.on('line', function(values){
+    userInput.push(values);
+});
+input.on('close',function(){
+    var arr = userInput.map(function(val){
+        return val.split(" ").map(function(num){
+            return Number(num);
+        });
+    });
+    console.log(arr);
+    for(var i=0;i<arr.length;i++){
+        var r=0;
+        var c=0;
+        for(var j=0;j<arr[i].length;j++){
+            r+=arr[i][j];
+            c+=arr[j][i];
+        }
+        console.log(r,c);
+        
+    }
+    for(i=0;i<arr.length;i++){
+        console.log(Math.min(...arr[i]),Math.max(...arr[i]));
+    }
+    var max=0;
+    var min=0;
+    for(i=0;i<arr.length;i++){
+        max=arr[i][0];
+        min=arr[i][0];
+        for(j=0;j<arr[i].length;j++){
+        if(arr[i][j]<min)
+        min=arr[i][j];
+        if(arr[i][j]>max)
+        max=arr[i][j];
+        
+    }
+        console.log(min,max);
+    }
+    
+});

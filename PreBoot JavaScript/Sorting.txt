@@ -1,0 +1,44 @@
+//finding non unique elements
+var readline = require('readline');
+var input = readline.createInterface({
+    input : process.stdin
+});
+var userInput = [];
+input.on('line', (value) => {
+    userInput.push(value);
+});
+input.on('close', () => {
+    var n = +userInput[0];
+    var arr = userInput[1].split(" ");
+    var prison = {};
+    for(var i=0;i<n;i++){
+        if(prison[arr[i]]===undefined){
+            prison[arr[i]]=1;
+        }
+        else
+        prison[arr[i]]+=1;
+    }
+    var output="";
+    var flag=-1;
+    for(let value in prison){
+        if(+prison[value]>1){
+            output+=value+" ";
+            flag=1;
+        }
+    }
+   if(flag===-1)
+   console.log("-1");
+   else
+   console.log(output.trim());
+});
+
+
+
+Input:
+=====
+7
+1 1 1 21 21 141 98
+
+Output:
+======
+1 21

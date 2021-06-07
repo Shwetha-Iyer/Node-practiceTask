@@ -1,0 +1,38 @@
+//program to encode caesar cipher
+var readline = require('readline');
+var input = readline.createInterface({
+    input: process.stdin
+});
+var userInput =[];
+input.on('line', function(values){
+    userInput.push(values);
+});
+input.on('close',function(){
+    var data = userInput[0].split(" ");
+    var str = data[0].split("");
+    var shift = +data[1];
+    for(var i=0;i<str.length;i++){
+        if(str[i]==str[i].toUpperCase())
+        {
+            str[i] = (str[i].charCodeAt()+shift-65)%26+65;
+            str[i] = String.fromCharCode(str[i])
+        }
+        else if(str[i]==str[i].toLowerCase()){
+            str[i] = (str[i].charCodeAt()+shift-97)%26+97;
+            str[i] = String.fromCharCode(str[i])
+        }
+	else 
+	continue;
+    }
+    console.log(str.join(""));
+    
+});
+
+
+Input:
+======
+ABCdEFGHIJKLMNOPQRSTUVWXYz 23
+
+Output:
+=======
+XYZaBCDEFGHIJKLMNOPQRSTUVw

@@ -1,0 +1,24 @@
+// sort 
+var readline = require('readline');
+var input = readline.createInterface({
+  input: process.stdin
+});
+var userInput = [];
+input.on('line', (values) => {
+  userInput.push(values);
+});
+input.on('close', () => {
+    var n = userInput[0];
+    var arr = userInput[1].split(" ");
+    var min = arr[0];
+    for(i=0;i<arr.length;i++)
+    {
+        for(j=i+1;j<arr.length;j++){
+            if(+arr[j]< +arr[i]){
+                [arr[j],arr[i]]=[arr[i],arr[j]];
+            }  
+        }
+        
+    }
+    console.log(arr.join(" "));
+});

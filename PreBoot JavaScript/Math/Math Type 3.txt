@@ -1,0 +1,24 @@
+//program to find the cube of a given number
+var readline = require('readline');
+var input = readline.createInterface({
+    input: process.stdin
+});
+var userInput=[];
+input.on('line', (values) => {
+    userInput.push(values);
+});
+input.on('close', () => {
+    var a = parseInt(userInput[0]);
+    var result=0;
+    result=(Math.pow(a,3));
+    console.log(result);
+});
+
+
+Input:
+=====
+2
+
+Output:
+=======
+8

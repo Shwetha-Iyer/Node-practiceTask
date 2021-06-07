@@ -1,0 +1,36 @@
+//program to print yes if a number exists in array
+var readline = require('readline');
+var input = readline.createInterface({
+    input: process.stdin
+});
+var userInput =[];
+input.on('line', function(values){
+    userInput.push(values);
+});
+input.on('close',function(){
+    var data = userInput[0].split(" ");
+    var n = parseInt(data[0]);
+    var k = parseInt(data[1]);
+    var flag=0;
+    var arr = userInput[1].split(" ");
+    for(var i=0;i<n;i++){
+        if(parseInt(k)===parseInt(arr[i])){
+            flag=1;
+            break;
+        }
+    }
+    if(flag===1)
+    console.log("yes");
+    else
+    console.log("no");
+});
+
+
+Input:
+======
+4 2
+1 5 2 4
+
+Output:
+=======
+yes

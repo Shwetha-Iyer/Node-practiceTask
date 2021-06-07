@@ -1,0 +1,32 @@
+// program to find if the number is Odd or Even or Zero
+var readline = require('readline');
+var input = readline.createInterface({
+    input: process.stdin
+});
+var userInput=[];
+input.on('line', (values) => {
+    userInput.push(values);
+});
+input.on('close', () => {
+    var a = userInput[0];
+    a = parseInt(a);
+    if(a%1!==0)
+        a=Math.round(a);
+    if(a%2===0){
+        if(a===0)
+        console.log("Zero");
+        else
+        console.log("Even");
+    }
+    else
+        console.log("Odd");
+});
+
+
+Input:
+======
+5.2
+
+Output:
+=======
+Odd

@@ -1,0 +1,55 @@
+// program to find GCD
+var readline = require('readline');
+var input = readline.createInterface({
+    input: process.stdin
+});
+var userInput=[];
+input.on('line', (values) => {
+    userInput.push(values);
+});
+input.on('close', () => {
+    var data = userInput[0].split(" ");
+    var a = parseInt(data[0]);
+    var b = parseInt(data[1]);
+    var max=0;
+    var result=0;
+    if(a>b)
+    max=a;
+    else
+    max=b;
+    for(i=1;i<=max;i++){
+        if((a%i===0)&&(b%i===0)){
+            if(a===0||b===0){
+            result=-1;
+            break;
+            }
+        result=i;
+        }
+    }
+    console.log(result);
+
+});
+
+Input:
+======
+10 5
+
+Output:
+======
+5
+
+Input:
+======
+13 -73
+
+Output:
+======
+1
+
+Input:
+======
+12 0
+
+Output:
+======
+-1

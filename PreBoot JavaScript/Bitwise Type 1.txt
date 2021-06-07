@@ -1,0 +1,28 @@
+// program to find the bitwise or of the elements in array
+var readline = require('readline');
+var input = readline.createInterface({
+    input: process.stdin
+});
+var userInput=[];
+input.on('line', (values) => {
+    userInput.push(values);
+});
+input.on('close', () => {
+    var n = parseInt(userInput[0]);
+    var data = userInput[1].split(" ");
+    var result=data[0];
+    for(i=1;i<n;i++){
+        result= result|data[i];
+    }
+    console.log(+result);
+});
+
+
+Input:
+======
+4
+4 3 2 1
+
+Output:
+=======
+7

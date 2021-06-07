@@ -1,0 +1,22 @@
+//program to find the area of an equilateral triangle and round of the value to 2 decimal places
+var readline = require('readline');
+var input = readline.createInterface({
+    input: process.stdin
+});
+var userInput=[];
+input.on('line', (values) => {
+    userInput.push(values);
+});
+input.on('close', () => {
+    var a = parseInt(userInput[0]);
+    var area = ((Math.sqrt(3)*a*a)/4).toFixed(2);
+    console.log(area);
+});
+
+Input:
+======
+20
+
+Output:
+=======
+173.21
