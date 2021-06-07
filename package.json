@@ -4,7 +4,7 @@
   "description": "",
   "main": "day1task.js",
   "scripts": {
-    "start": "day1task.js"
+    "start": "node day1task.js"
   },
   "keywords": [],
   "author": "",
