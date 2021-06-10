@@ -3,7 +3,7 @@ var express = require("express");
 var app = express();
 var result ="";
 const port = process.env.PORT || 3000;
-fs.readdir(".\\PreBoot JavaScript","utf-8",(err,files)=>{
+fs.readdir("./PreBoot JavaScript","utf-8",(err,files)=>{
     app.get("/",(req,res)=>{
         if(err){
             console.log(err);
@@ -11,7 +11,7 @@ fs.readdir(".\\PreBoot JavaScript","utf-8",(err,files)=>{
         }
         else{
             for(var i=0;i<files.length;i++){
-                var path = ".\\PreBoot JavaScript\\"+files[i];
+                var path = "./PreBoot JavaScript/"+files[i];
                 var temp = fs.statSync(path);
                 if(temp.isFile()){
                     result +="<img src='https://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Docs-icon.png' height='25px' width='30px'>"+ files[i] +"<br>";
